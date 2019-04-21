@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un utilisateur{% endblock %}
+{% block pageHeader %}<h1>Ajouter un utilisateur</h1>{% endblock %}
+{% block body %}
+<div class="col-md-12">
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Remplir le formulaire pour ajouter un utilisateur</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            {{ form_start(form,{'attr':{'class':'form-horizontal'}}) }}
+               <div class="box-body">
+                    <div class="form-group">
+                        {{ form_label(form.lastName,'Nom',{'label_attr':{'class':'col-sm-2 control-label'}}) }}
+                        <div class="col-sm-10">
+                            {{ form_widget(form.lastName,{'attr':{'class':'form-control'}}) }}
+                            <span class="text-danger">{{ form_errors(form.lastName) }}</span>
+                        </div>
+                    </div>
+
+                   <div class="form-group">
+                       {{ form_label(form.firstName,'Prénom',{'label_attr':{'class':'col-sm-2 control-label'}}) }}
+                       <div class="col-sm-10">
+                           {{ form_widget(form.firstName,{'attr':{'class':'form-control'}}) }}
+                           <span class="text-danger">{{ form_errors(form.firstName) }}</span>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       {{ form_label(form.username,'Pseudo',{'label_attr':{'class':'col-sm-2 control-label'}}) }}
+                       <div class="col-sm-10">
+                           {{ form_widget(form.username,{'attr':{'class':'form-control'}}) }}
+                           <span class="text-danger">{{ form_errors(form.username) }}</span>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       {{ form_label(form.email,'Email',{'label_attr':{'class':'col-sm-2 control-label'}}) }}
+                       <div class="col-sm-10">
+                           {{ form_widget(form.email,{'attr':{'class':'form-control'}}) }}
+                           <span class="text-danger">{{ form_errors(form.email) }}</span>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       {{ form_label(form.plainPassword,'Mots de passe',{'label_attr':{'class':'col-sm-2 control-label'}}) }}
+                       <div class="col-sm-10">
+                           {{ form_widget(form.plainPassword,{'attr':{'class':'form-control'}}) }}
+                           <span class="text-danger">{{ form_errors(form.plainPassword) }}</span>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       {{ form_label(form.roles,'Role',{'label_attr':{'class':'col-sm-2 control-label'}}) }}
+                       <div class="col-sm-10">
+                           {{ form_widget(form.roles,{'attr':{'class':'form-control'}}) }}
+                           <span class="help-block">{{ form_errors(form.roles) }}</span>
+                       </div>
+                   </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="reset" class="btn btn-default">Reinstaller</button>
+                        <button type="submit" class="btn btn-info pull-right">Enregistrer</button>
+                    </div>
+                    <!-- /.box-footer -->
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
